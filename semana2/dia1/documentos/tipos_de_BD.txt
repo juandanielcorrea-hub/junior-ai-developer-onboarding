@@ -1,0 +1,5 @@
+Al diseñar la arquitectura de datos, los desarrolladores deben elegir entre modelos relacionales y NoSQL según las necesidades del proyecto.
+Las bases de datos relacionales, como MySQL o SQL Server, utilizan tablas estructuradas y son ideales para mantener la integridad en transacciones complejas.
+Por otro lado, las soluciones NoSQL, como Firebase Firestore, guardan la información en colecciones de documentos flexibles.
+Estos esquemas dinámicos son perfectos para aplicaciones que requieren sincronización de datos en tiempo real o donde la estructura de los datos cambia constantemente.
+Una mala elección en el tipo de base de datos puede generar cuellos de botella severos al escalar la aplicación.

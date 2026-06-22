@@ -1,0 +1,5 @@
+Escribir código limpio y mantener una arquitectura ordenada en el backend ahorra cientos de horas de mantenimiento a largo plazo.
+Al diseñar una API RESTful, las rutas de acceso deben ser claras, utilizar sustantivos en plural y aplicar los métodos HTTP correctos (GET, POST, PUT, DELETE).
+Es vital separar las responsabilidades: los controladores no deben tener consultas directas a la base de datos, sino delegarlas a una capa de servicios.
+Siempre se debe responder con el código de estado HTTP adecuado, como 201 para creaciones exitosas o 400 para errores del cliente.
+Mantener las dependencias del proyecto aisladas, por ejemplo usando entornos virtuales, evita conflictos entre librerías globales y locales.

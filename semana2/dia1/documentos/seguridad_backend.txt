@@ -1,0 +1,5 @@
+La seguridad en el lado del servidor es el escudo principal contra el robo de información y la manipulación del sistema.
+Es una regla de oro que las contraseñas de los usuarios jamás deben guardarse en texto plano; siempre deben estar cifradas mediante algoritmos de hash como bcrypt.
+Toda entrada de datos proveniente del cliente debe ser tratada como potencialmente peligrosa y ser sanitizada estrictamente.
+Esto previene ataques críticos como la inyección SQL, donde comandos maliciosos intentan alterar la base de datos.
+Además, la implementación de tokens como JWT permite mantener sesiones seguras sin exponer credenciales en cada petición.

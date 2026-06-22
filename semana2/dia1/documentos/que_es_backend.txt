@@ -1,0 +1,5 @@
+El backend es el motor invisible que impulsa cualquier aplicación web o móvil.
+Se encarga de procesar la lógica de negocio, gestionar la autenticación de usuarios y actuar como puente entre la interfaz y el servidor.
+En este entorno, lenguajes como Python, Java y PHP son fundamentales para construir las reglas y rutas del sistema.
+Su función principal es exponer APIs para que el frontend pueda solicitar, enviar o modificar datos sin conocer la complejidad interna.
+Un backend robusto debe ser capaz de manejar múltiples peticiones simultáneas sin afectar el rendimiento del servidor.
