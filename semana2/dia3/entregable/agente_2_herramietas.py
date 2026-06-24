@@ -60,7 +60,6 @@ print(f"Indexación completada. {len(all_splits)} fragmentos guardados.")
 # 3. DEFINICIÓN DE HERRAMIENTAS (TOOLS)
 # ==========================================
 
-
 # HERRAMIENTA 1: Recuperación de contexto RAG
 @tool(response_format="content_and_artifact")
 def retrieve_context(query: str):
