@@ -77,7 +77,6 @@ def get_current_time_and_date(format: str = "%Y-%m-%d %H:%M:%S") -> str:
     """Devuelve la fecha y hora actual del sistema. Útil si el usuario pregunta qué día es o requiere contexto temporal."""
     return datetime.now().strftime(format)
 
-
 # Lista de herramientas disponibles para el agente
 tools = [retrieve_context, get_current_time_and_date]
 
