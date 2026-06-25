@@ -10,14 +10,12 @@ from langchain.chat_models import init_chat_model
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
-# ==========================================
-# 1. CONFIGURACIÓN DE ENTORNO Y COMPONENTES
-# ==========================================
+# CONFIGURACIÓN DE ENTORNO Y COMPONENTES
 
-# Asegúrate de tener tu API Key de Google configurada en tu entorno
 # os.environ["GOOGLE_API_KEY"] = "TU_API_KEY_AQUÍ"
 
 print("Inicializando componentes de Google Gemini...")
+
 # Inicialización del modelo de chat (Gemini 2.5 Flash Lite)
 model = init_chat_model("google_genai:gemini-2.5-flash-lite")
 
@@ -28,9 +26,7 @@ embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001")
 vector_store = InMemoryVectorStore(embeddings)
 
 
-# ==========================================
-# 2. PIPELINE DE INDEXACIÓN (ETL)
-# ==========================================
+# PIPELINE DE INDEXACIÓN
 
 def load_web_page(url: str, bs_kwargs: dict | None = None) -> list[Document]:
     """Descarga y parsea una página web."""
@@ -56,9 +52,7 @@ vector_store.add_documents(documents=all_splits)
 print(f"Indexación completada. {len(all_splits)} fragmentos guardados.")
 
 
-# ==========================================
-# 3. DEFINICIÓN DE HERRAMIENTAS (TOOLS)
-# ==========================================
+# DEFINICIÓN DE HERRAMIENTAS
 
 # HERRAMIENTA 1: Recuperación de contexto RAG
 @tool(response_format="content_and_artifact")
@@ -81,9 +75,7 @@ def get_current_time_and_date(format: str = "%Y-%m-%d %H:%M:%S") -> str:
 tools = [retrieve_context, get_current_time_and_date]
 
 
-# ==========================================
-# 4. CONSTRUCCIÓN DEL AGENTE
-# ==========================================
+# CONSTRUCCIÓN DEL AGENTE
 
 prompt_sistema = (
     "Eres un asistente experto en Inteligencia Artificial y agentes autónomos. "
@@ -98,9 +90,7 @@ prompt_sistema = (
 agent = create_agent(model, tools, system_prompt=prompt_sistema)
 
 
-# ==========================================
-# 5. EJECUCIÓN CON MEMORIA CONVERSACIONAL
-# ==========================================
+# EJECUCIÓN CON MEMORIA CONVERSACIONAL
 
 def chat_con_agente():
     """Ejecuta un bucle interactivo en consola manteniendo el historial de la conversación."""
@@ -140,7 +130,7 @@ def chat_con_agente():
                     print(token, end="", flush=True)
                     respuesta_completa_agente += token
             elif kind == "tool_calls":
-                print(f"\n🔧 [Llamada a Herramienta]: {item.tool_name}({item.input})")
+                print(f"\n[Llamada a Herramienta]: {item.tool_name}({item.input})")
                 # El framework ejecuta la tool internamente y muestra su resultado en el flujo de eventos si es necesario
         
         print() # Salto de línea al terminar la respuesta

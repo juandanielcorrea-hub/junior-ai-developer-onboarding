@@ -1,0 +1,1 @@
+Este dia se consiguieron varias insignias de un curso, el cual no pedia productos de trabajo ni entregables, se pueden ver en el perfil o revisar la foto adjunta

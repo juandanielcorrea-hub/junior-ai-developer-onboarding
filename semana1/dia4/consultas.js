@@ -90,6 +90,6 @@ db.ventas.aggregate([
         }
     },
     {
-        $sort: { "_id": 1 } // Ordena por el mes de forma ascendente
+        $sort: { "_id": 1 }
     }
 ]);
